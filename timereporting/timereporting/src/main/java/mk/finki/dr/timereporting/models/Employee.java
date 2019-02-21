@@ -8,22 +8,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@NotNull
 	private String embg;
-	
 	private String mobile;
 	private String street;
 	private String city;
+	@NotNull
 	private String dateJoining;
 	@ManyToOne
+	@NotNull
 	private Role role;
 	@ManyToMany
+	@NotNull
 	private List<Project> projects;
 	public void setId(Integer id) {
 		this.id = id;

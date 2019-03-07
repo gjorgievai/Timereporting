@@ -6,8 +6,9 @@ import mk.finki.dr.timereporting.models.Employee;
 
 public interface EmployeeService {
 
-	public List<Employee> findAll();
-	public Employee findOne(Integer id);
-	public void deleteEmployee(Integer id);
+	 List<Employee> findAll();
+	 Employee findOne(Integer id);
+	 void deleteEmployee(Integer id);
+	 Employee save(Employee employee);
 
 }

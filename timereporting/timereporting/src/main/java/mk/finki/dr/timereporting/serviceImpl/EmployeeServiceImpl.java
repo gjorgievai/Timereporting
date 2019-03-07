@@ -28,4 +28,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 		repo.deleteById(id);
 	}
 
+	@Override
+	public Employee save(Employee employee) {
+		return repo.save(employee);
+	}
+
 }

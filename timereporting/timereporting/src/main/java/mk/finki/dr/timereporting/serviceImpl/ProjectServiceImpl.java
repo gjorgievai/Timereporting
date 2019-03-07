@@ -16,9 +16,10 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Project findOne(Integer id) {
+    public Project findById(Integer id) {
         return repo.getOne(id);
     }
+
 
     @Override
     public void deleteProject(Integer id) {

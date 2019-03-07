@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface ProjectService {
     List<Project> findAll();
-    Project findOne(Integer id);
+    Project findById(Integer id);
     void deleteProject(Integer id);
     Project save(Project project);
 }

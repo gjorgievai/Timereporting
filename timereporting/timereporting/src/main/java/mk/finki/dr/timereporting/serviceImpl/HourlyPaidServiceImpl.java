@@ -4,9 +4,10 @@ import mk.finki.dr.timereporting.models.HourlyPaid;
 import mk.finki.dr.timereporting.repositories.HourlyPaidRepository;
 import mk.finki.dr.timereporting.services.HourlyPaidService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class HourlyPaidServiceImpl implements HourlyPaidService {
     @Autowired
     HourlyPaidRepository repo;

@@ -4,9 +4,10 @@ import mk.finki.dr.timereporting.models.Client;
 import mk.finki.dr.timereporting.repositories.ClientRepository;
 import mk.finki.dr.timereporting.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ClientServiceImpl implements ClientService {
     @Autowired
     ClientRepository repo;

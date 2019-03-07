@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface ClientService {
     List<Client> findAll();
     Client findById(Integer id);

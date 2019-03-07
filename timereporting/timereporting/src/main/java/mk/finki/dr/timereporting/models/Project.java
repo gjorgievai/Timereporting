@@ -16,9 +16,6 @@ public class Project {
 	private String name;
 	@NotNull
 	private int budget;
-	@ManyToOne
-	@NotNull
-	private Client client;
 	
 	public int getId() {
 		return id;
@@ -37,12 +34,6 @@ public class Project {
 	}
 	public void setBudget(int budget) {
 		this.budget = budget;
-	}
-	public Client getClient() {
-		return client;
-	}
-	public void setClient(Client client) {
-		this.client = client;
 	}
 	
 

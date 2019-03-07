@@ -4,9 +4,10 @@ import mk.finki.dr.timereporting.models.Role;
 import mk.finki.dr.timereporting.repositories.RoleRepository;
 import mk.finki.dr.timereporting.services.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class RoleServiceImpl implements RoleService {
     @Autowired
     RoleRepository repo;

@@ -10,6 +10,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Employee {
@@ -26,12 +27,42 @@ public class Employee {
 	private String street;
 	private String city;
 	@NotNull
-	private String dateJoining;
-	@ManyToOne
+	private String username;
 	@NotNull
+	@JsonIgnore
+	private String password;
+	@NotNull
+	private String email;
+	@NotNull
+	private String dateJoining;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@ManyToOne
 	private Role role;
 	@ManyToMany
-	@NotNull
 	private List<Project> projects;
 	public void setId(Integer id) {
 		this.id = id;

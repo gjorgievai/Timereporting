@@ -33,6 +33,5 @@ public class EmployeeController {
 	public void createEmployee(@RequestBody Employee employee) {
 		service.save(employee);
 	}
-	
 
 }

@@ -12,6 +12,7 @@ import mk.finki.dr.timereporting.repositories.EmployeeRepository;
 import mk.finki.dr.timereporting.services.EmployeeService;
 @RequestMapping("/employee")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class EmployeeController {
 	
 	@Autowired

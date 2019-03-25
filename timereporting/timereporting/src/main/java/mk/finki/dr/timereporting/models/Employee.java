@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -26,10 +27,7 @@ public class Employee {
 	private String mobile;
 	private String street;
 	private String city;
-	@NotNull
 	private String username;
-	@NotNull
-	@JsonIgnore
 	private String password;
 	@NotNull
 	private String email;
@@ -127,16 +125,30 @@ public class Employee {
 		this.mobile = mobile;
 	}
 	public Employee() {}
-	public Employee(String firstName, String lastName, String embg, String mobile, String street, String city,
-			String dateJoining) {
-		super();
+
+	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg, String mobile, String street, String city, String username, String password, @NotNull String email, @NotNull String dateJoining, Role role, List<Project> projects) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.embg = embg;
 		this.mobile = mobile;
 		this.street = street;
 		this.city = city;
+		this.username = username;
+		this.password = password;
+		this.email = email;
 		this.dateJoining = dateJoining;
-	};
-	
+		this.role=role;
+		this.projects = projects;
+	}
+	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg,String username, String password,@NotNull String email, @NotNull String dateJoining)
+	{
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.embg = embg;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.dateJoining = dateJoining;
+		this.role.setId(role.getId());
+	}
 }

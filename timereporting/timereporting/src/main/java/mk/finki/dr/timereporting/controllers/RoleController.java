@@ -13,19 +13,19 @@ public class RoleController {
     @Autowired
     RoleService service;
     @GetMapping
-    public List<Role> getEmployee() {
+    public List<Role> getRoles() {
         return service.findAll();
     }
     @GetMapping("/{id}")
-    public Role getEmployeeById(@PathVariable Integer id) {
+    public Role getRoleById(@PathVariable Integer id) {
         return service.findOne(id);
     }
     @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable Integer id) {
+    public void deleteRole(@PathVariable Integer id) {
         service.deleteRole(id);
     }
     @PostMapping("/create")
-    public void createEmployee(@RequestBody Role role) {
+    public void createRole(@RequestBody Role role) {
         service.save(role);
     }
 }

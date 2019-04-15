@@ -17,7 +17,7 @@ public class Project {
 	@NotNull
 	private int budget;
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {

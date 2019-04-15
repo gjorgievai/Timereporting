@@ -9,23 +9,24 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/projects")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProjectController {
     @Autowired
     ProjectService service;
     @GetMapping
-    public List<Project> getEmployee() {
+    public List<Project> getProjects() {
         return service.findAll();
     }
     @GetMapping("/{id}")
-    public Project getEmployeeById(@PathVariable Integer id) {
+    public Project getProjectById(@PathVariable Integer id) {
         return service.findById(id);
     }
     @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable Integer id) {
+    public void deleteProject(@PathVariable Integer id) {
         service.deleteProject(id);
     }
     @PostMapping("/create")
-    public void createEmployee(@RequestBody Project project) {
+    public void createProject(@RequestBody Project project) {
         service.save(project);
     }
 }

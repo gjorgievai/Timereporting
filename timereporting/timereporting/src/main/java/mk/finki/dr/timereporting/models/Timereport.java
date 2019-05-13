@@ -2,11 +2,7 @@ package mk.finki.dr.timereporting.models;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 @Entity
 public class Timereport {
@@ -16,15 +12,46 @@ public class Timereport {
 	@NotNull
 	private Date date;
 	@NotNull
-	private int hours;
-	@OneToOne
+	private Integer hours;
+
 	@NotNull
+	@ManyToOne
 	private Employee employee;
-	
-	public int getId() {
+	@NotNull
+	@ManyToOne
+	private  Project project;
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
+	public void setHours(Integer hours) {
+		this.hours = hours;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+	public Timereport (){}
+	public Timereport(@NotNull Date date, @NotNull Integer hours ,@NotNull Integer employeeId,@NotNull Integer projectId) {
+		this.date = date;
+		this.hours = hours;
+		this.employee.setId(employeeId);
+		this.project.setId(projectId);
+	}
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public Date getDate() {
@@ -38,12 +65,6 @@ public class Timereport {
 	}
 	public void setHours(int hours) {
 		this.hours = hours;
-	}
-	public Employee getEmployee() {
-		return employee;
-	}
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
 	}
 	
 }

@@ -1,18 +1,15 @@
 package mk.finki.dr.timereporting.models;
 
+import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Employee {
 	@Id
@@ -32,7 +29,7 @@ public class Employee {
 	@NotNull
 	private String email;
 	@NotNull
-	private String dateJoining;
+	private Date dateJoining;
 
 	public String getUsername() {
 		return username;
@@ -94,10 +91,10 @@ public class Employee {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getDateJoining() {
+	public Date getDateJoining() {
 		return dateJoining;
 	}
-	public void setDateJoining(String dateJoining) {
+	public void setDateJoining(Date dateJoining) {
 		this.dateJoining = dateJoining;
 	}
 	public String getFirstName() {
@@ -126,7 +123,7 @@ public class Employee {
 	}
 	public Employee() {}
 
-	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg, String mobile, String street, String city, String username, String password, @NotNull String email, @NotNull String dateJoining, Role role, List<Project> projects) {
+	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg, String mobile, String street, String city, String username, String password, @NotNull String email, @NotNull Date dateJoining, Role role, List<Project> projects) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.embg = embg;
@@ -140,7 +137,7 @@ public class Employee {
 		this.role=role;
 		this.projects = projects;
 	}
-	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg,String username, String password,@NotNull String email, @NotNull String dateJoining)
+	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg,String username, String password,@NotNull String email, @NotNull Date dateJoining)
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -151,4 +148,5 @@ public class Employee {
 		this.dateJoining = dateJoining;
 		this.role.setId(role.getId());
 	}
+
 }

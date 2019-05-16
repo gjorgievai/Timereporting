@@ -30,6 +30,15 @@ public class Employee {
 	private String email;
 	@NotNull
 	private Date dateJoining;
+	private Integer totalHours;
+
+	public Integer getTotalHours() {
+		return totalHours;
+	}
+
+	public void setTotalHours(Integer totalHours) {
+		this.totalHours = totalHours;
+	}
 
 	public String getUsername() {
 		return username;
@@ -123,7 +132,7 @@ public class Employee {
 	}
 	public Employee() {}
 
-	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg, String mobile, String street, String city, String username, String password, @NotNull String email, @NotNull Date dateJoining, Role role, List<Project> projects) {
+	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg, String mobile, String street, String city, String username, String password, @NotNull String email, @NotNull Date dateJoining, Role role, List<Project> projects,Integer totalHours) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.embg = embg;
@@ -136,6 +145,7 @@ public class Employee {
 		this.dateJoining = dateJoining;
 		this.role=role;
 		this.projects = projects;
+		this.totalHours = totalHours;
 	}
 	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg,String username, String password,@NotNull String email, @NotNull Date dateJoining)
 	{

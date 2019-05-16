@@ -25,7 +25,7 @@ public class TimereportingController {
         service.deleteTimereport(id);
     }
     @PostMapping("/create")
-    public void createTimereport(@RequestBody Timereport timereport) {
-        service.save(timereport);
+    public Timereport createTimereport(@RequestBody Timereport timereport) {
+       return service.save(timereport);
     }
 }

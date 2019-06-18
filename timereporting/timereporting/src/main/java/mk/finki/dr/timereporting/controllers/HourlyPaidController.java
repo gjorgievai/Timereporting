@@ -25,7 +25,7 @@ public class HourlyPaidController {
     public void deleteEmployee(@PathVariable Integer id) {
         service.deleteHourlyPaid(id);
     }
-    @PostMapping("/create")
+    @PostMapping
     public void createEmployee(@RequestBody HourlyPaid hourlyPaid) {
         service.save(hourlyPaid);
     }

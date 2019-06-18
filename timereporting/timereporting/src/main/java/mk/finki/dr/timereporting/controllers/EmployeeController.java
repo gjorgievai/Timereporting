@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.websocket.server.PathParam;
 
+import mk.finki.dr.timereporting.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,13 +27,26 @@ public class EmployeeController {
 	public Employee getEmployeeById(@PathVariable Integer id) {
 		return service.findOne(id);
 	}
+	@GetMapping("/{username}")
+	public Employee getEmployeeByUsername(@PathVariable String username) {
+		return service.findByUsername(username);
+	}
 	@DeleteMapping("/{id}")
 	public void deleteEmployee(@PathVariable Integer id) {
 		service.deleteEmployee(id);
 	}
-	@PostMapping("/create")
+	@PostMapping
 	public void createEmployee(@RequestBody Employee employee) {
 		service.save(employee);
 	}
+	@PutMapping
+	public Employee updateEmpoyee(@RequestBody Employee newEmployee){
+		return service.save(newEmployee);
+	}
+	@PostMapping("/login")
+	public Employee loginEmployee(@RequestBody User employee){
+		return service.login(employee);
+	}
+
 
 }

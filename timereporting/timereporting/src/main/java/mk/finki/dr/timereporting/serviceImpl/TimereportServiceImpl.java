@@ -30,4 +30,5 @@ public class TimereportServiceImpl implements TimereportService {
     public Timereport save(Timereport timereport) {
         return repo.save(timereport);
     }
+
 }

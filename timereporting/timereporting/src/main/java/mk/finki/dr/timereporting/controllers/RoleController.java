@@ -24,7 +24,7 @@ public class RoleController {
     public void deleteRole(@PathVariable Integer id) {
         service.deleteRole(id);
     }
-    @PostMapping("/create")
+    @PostMapping
     public void createRole(@RequestBody Role role) {
         service.save(role);
     }

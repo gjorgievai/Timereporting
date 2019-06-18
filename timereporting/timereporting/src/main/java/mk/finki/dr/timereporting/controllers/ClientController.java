@@ -26,7 +26,7 @@ public class ClientController {
     public void deleteEmployee(@PathVariable Integer id) {
         service.deleteClientById(id);
     }
-    @PostMapping("/create")
+    @PostMapping
     public void createEmployee(@RequestBody Client client) {
         service.save(client);
     }

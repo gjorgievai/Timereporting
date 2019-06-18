@@ -2,6 +2,7 @@ package mk.finki.dr.timereporting.serviceImpl;
 
 import java.util.List;
 
+import mk.finki.dr.timereporting.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +33,16 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public Employee save(Employee employee) {
 		return repo.save(employee);
 	}
+
+	@Override
+	public Employee findByUsername(String username) {
+		return repo.findByUsername(username);
+	}
+
+	@Override
+	public Employee login(User user) {
+		return repo.findByUsernameAndPassword(user.getUsername(),user.getPassword());
+	}
+
 
 }

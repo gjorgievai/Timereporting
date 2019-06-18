@@ -25,7 +25,7 @@ public class ProjectController {
     public void deleteProject(@PathVariable Integer id) {
         service.deleteProject(id);
     }
-    @PostMapping("/create")
+    @PostMapping
     public void createProject(@RequestBody Project project) {
         service.save(project);
     }

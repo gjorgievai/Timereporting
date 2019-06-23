@@ -4,6 +4,7 @@ import mk.finki.dr.timereporting.services.TimereportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Time;
 import java.util.List;
 
 @RestController
@@ -27,5 +28,9 @@ public class TimereportingController {
     @PostMapping
     public Timereport createTimereport(@RequestBody Timereport timereport) {
        return service.save(timereport);
+    }
+    @PutMapping
+    public Timereport updateTimereport(@RequestBody Timereport newtimereport){
+        return service.save(newtimereport);
     }
 }

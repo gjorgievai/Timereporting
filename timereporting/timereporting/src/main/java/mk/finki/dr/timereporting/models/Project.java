@@ -16,7 +16,6 @@ public class Project {
 	private String name;
 	@NotNull
 	private int budget;
-	
 	public Integer getId() {
 		return id;
 	}

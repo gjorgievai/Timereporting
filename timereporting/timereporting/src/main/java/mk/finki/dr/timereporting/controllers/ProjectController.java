@@ -29,4 +29,8 @@ public class ProjectController {
     public void createProject(@RequestBody Project project) {
         service.save(project);
     }
+    @PutMapping
+    public void updateProject(@RequestBody Project newproject) {
+        service.save(newproject);
+    }
 }

@@ -1,10 +1,6 @@
 package mk.finki.dr.timereporting.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 @Entity
 public class HourlyPaid {
@@ -13,7 +9,7 @@ public class HourlyPaid {
 	private Integer id;
 	@NotNull
 	private int cost;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@NotNull
 	private Project project;
 	@OneToOne

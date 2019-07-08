@@ -64,9 +64,9 @@ public class Employee {
 		this.email = email;
 	}
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Role role;
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Project> projects;
 	public void setId(Integer id) {
 		this.id = id;

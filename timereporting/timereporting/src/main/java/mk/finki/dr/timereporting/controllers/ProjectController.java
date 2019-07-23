@@ -30,7 +30,7 @@ public class ProjectController {
         service.save(project);
     }
     @PutMapping
-    public void updateProject(@RequestBody Project newproject) {
-        service.save(newproject);
+    public Project updateProject(@RequestBody Project newproject) {
+        return service.save(newproject);
     }
 }

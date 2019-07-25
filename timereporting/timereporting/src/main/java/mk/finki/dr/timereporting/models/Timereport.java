@@ -15,7 +15,7 @@ public class Timereport {
 	private Integer hours;
 
 	@NotNull
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Employee employee;
 	@NotNull
 	@ManyToOne

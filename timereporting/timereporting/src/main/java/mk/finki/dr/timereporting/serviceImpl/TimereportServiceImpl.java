@@ -6,6 +6,7 @@ import mk.finki.dr.timereporting.services.TimereportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 @Service
 public class TimereportServiceImpl implements TimereportService {
@@ -29,6 +30,11 @@ public class TimereportServiceImpl implements TimereportService {
     @Override
     public Timereport save(Timereport timereport) {
         return repo.save(timereport);
+    }
+
+    @Override
+    public List<Timereport> findByDate(Date startDate, Date endDate,Integer id) {
+        return repo.findTimereportsByDate(startDate,endDate,id);
     }
 
 }

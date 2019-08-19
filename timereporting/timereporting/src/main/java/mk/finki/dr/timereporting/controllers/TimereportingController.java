@@ -2,9 +2,11 @@ package mk.finki.dr.timereporting.controllers;
 import mk.finki.dr.timereporting.models.Timereport;
 import mk.finki.dr.timereporting.services.TimereportService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -33,4 +35,9 @@ public class TimereportingController {
     public Timereport updateTimereport(@RequestBody Timereport newtimereport){
         return service.save(newtimereport);
     }
+    @GetMapping("/filterByDate")
+    public List<Timereport> getTimereportByDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate , @RequestParam Integer employeeId){
+        return service.findByDate(startDate,endDate,employeeId);
+    }
+
 }

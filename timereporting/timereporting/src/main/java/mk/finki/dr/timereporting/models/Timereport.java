@@ -1,5 +1,7 @@
 package mk.finki.dr.timereporting.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 import javax.persistence.*;
@@ -10,6 +12,7 @@ public class Timereport {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	@NotNull
+	@Temporal(TemporalType.DATE)
 	private Date date;
 	@NotNull
 	private Integer hours;

@@ -13,7 +13,15 @@ public class Project {
 	private String name;
 	@NotNull
 	private int budget;
-	@OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+	@NotNull
+	private int hourlyPaid;
+	public int getHourlyPaid() {
+		return hourlyPaid;
+	}
+	public void setHourlyPaid(int hourlyPaid) {
+		this.hourlyPaid = hourlyPaid;
+	}
+	@OneToMany
 	private List<Timereport> timereportList;
 	public Integer getId() {
 		return id;
@@ -33,6 +41,12 @@ public class Project {
 	public void setBudget(int budget) {
 		this.budget = budget;
 	}
-	
+	public Project(@NotNull String name, @NotNull int id, @NotNull int budget,@NotNull int hourlyPaid) {
+		this.name = name;
+		this.budget = budget;
+		this.hourlyPaid =hourlyPaid;
+		this.id=id;
+	}
+	public Project() {}
 
 }

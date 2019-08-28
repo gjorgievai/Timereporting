@@ -66,7 +66,7 @@ public class Employee {
 
 	@ManyToOne
 	private Role role;
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.PERSIST)
 	private List<Project> projects;
 	public void setId(Integer id) {
 		this.id = id;
@@ -146,17 +146,6 @@ public class Employee {
 		this.role=role;
 		this.projects = projects;
 		this.totalHours = totalHours;
-	}
-	public Employee(@NotNull String firstName, @NotNull String lastName, @NotNull String embg,String username, String password,@NotNull String email, @NotNull Date dateJoining)
-	{
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.embg = embg;
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.dateJoining = dateJoining;
-		this.role.setId(role.getId());
 	}
 
 }

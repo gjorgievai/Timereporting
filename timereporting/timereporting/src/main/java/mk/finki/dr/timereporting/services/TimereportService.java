@@ -1,5 +1,6 @@
 package mk.finki.dr.timereporting.services;
 
+import mk.finki.dr.timereporting.models.Employee;
 import mk.finki.dr.timereporting.models.Timereport;
 import org.springframework.stereotype.Service;
 
@@ -12,4 +13,5 @@ public interface TimereportService {
     void deleteTimereport(Integer id);
     Timereport save (Timereport timereport);
     List<Timereport> findByDate(Date startDate, Date endDate,Integer id);
+    List<Timereport> findByEmployee(Integer employee);
 }

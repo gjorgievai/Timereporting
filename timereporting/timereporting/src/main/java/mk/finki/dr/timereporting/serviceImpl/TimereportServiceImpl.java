@@ -1,5 +1,6 @@
 package mk.finki.dr.timereporting.serviceImpl;
 
+import mk.finki.dr.timereporting.models.Employee;
 import mk.finki.dr.timereporting.models.Timereport;
 import mk.finki.dr.timereporting.repositories.TimereportRepository;
 import mk.finki.dr.timereporting.services.TimereportService;
@@ -36,5 +37,10 @@ public class TimereportServiceImpl implements TimereportService {
     public List<Timereport> findByDate(Date startDate, Date endDate,Integer id) {
         return repo.findTimereportsByDate(startDate,endDate,id);
     }
+
+	@Override
+	public List<Timereport> findByEmployee(Integer employee) {
+		return repo.findTimereportsByEmployee(employee);
+	}
 
 }

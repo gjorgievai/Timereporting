@@ -39,5 +39,9 @@ public class TimereportingController {
     public List<Timereport> getTimereportByDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate , @RequestParam Integer employeeId){
         return service.findByDate(startDate,endDate,employeeId);
     }
+    @GetMapping("/employee/{id}")
+    public List<Timereport> getTimereportByEmployee(@PathVariable Integer id){
+    	return service.findByEmployee(id);
+    }
 
 }
